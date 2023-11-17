@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+* {
+    transition: 0.5s ease-out;
+}
+body {
+    font-family: Montserrat;
+    
+}
+.header {
+    display: flex;
+    align-items: center;
+    margin: 15px 30px;
+    background-color: rgb(212, 226, 230);
+    border-radius: 25px;
+    justify-content: space-between;
+    gap: 30px;
+}
+.header-nav {
+    gap: 30px;
+    display: flex;
+}
+
+.header-logo {
+    width: 300px;
+    transition: 0.5s;
+}
+.list__item {
+    background-color: rgb(221, 234, 238);
+    height: 60px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+}
+.list__item--modal {
+    background-color: rgb(221, 234, 238);
+    height: 10vh;
+    width: 80vw;
+    border: solid 1px rgb(154, 164, 167);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+}
+.list__item:hover, .list__item--modal:hover {
+    background-color: rgb(197, 210, 214);
+}
+.list__item:active, .list__item--modal:active {
+    transition: 0.1s;
+    background-color: rgb(167, 180, 184);
+}
+.burger-icon {
+    position: absolute;
+    display: none;
+    right: 10px;
+    top: 65px;
+}
+.burger-icon span,
+.burger-icon span::before,
+.burger-icon span::after {
+    display: block;
+    width: 40px;
+    height: 3px;
+    border-radius: 100px;
+    background: black;
+}
+.burger-icon span {
+    position: relative;
+}
+.burger-icon span::before,
+.burger-icon span::after {
+    content: '';
+    position: absolute;
+}
+.burger-icon span::before {
+    top: -10px;
+}
+.burger-icon span::after {
+    bottom: -10px;
+}
+.input_block {
+    margin: 30px 0;
+    background-color: rgb(212, 226, 230);
+    border-radius: 25px;
+    height: auto;
+    max-height: 200vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.input-window {
+    background-color: rgb(212, 226, 230);
+    border-radius: 25px;
+    border: 1px solid rgb(181, 194, 197);
+    height: 70px;
+    flex-grow: 1;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 25px;
+    transition: 0.3s;
+}
+.input-window:hover {
+    background-color: rgb(197, 208, 211);
+}
+.input-window:focus-visible {
+    background-color: rgb(197, 208, 211);
+    scale: 1.02;
+}
+.list__theme {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(141, 141, 141);
+    height: 60px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.list__theme--modal {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(141, 141, 141);
+    height: 10vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.spawn-text {
+    margin: 30px 0;
+    background-color: rgb(213, 230, 212);
+    border-radius: 25px;
+    height: 200px;
+    width: 150px;
+    font-size: 24px;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+.spawn-text:hover {
+    background-color: rgb(192, 207, 191);
+}
+.spawn-text:active {
+    background-color: rgb(176, 190, 175);
+}
+.footer {
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(141, 141, 141);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome {
+    background-color:rgb(251, 253, 255); 
+    height: 50px; 
+    width: 400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 10px;
+}
+.burger-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    position: fixed;
+    visibility: hidden;
+    z-index: 0;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    width: auto;
+    transition: 0.3s ease-out;
+    background: rgba(255, 255, 255, 0.521);
+}
+.visible {
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+}
+.dark {
+    color: rgb(255, 255, 255);
+    background-color: rgb(31, 31, 31);
+    transition: 0.5s;
+    border: 1px white solid;
+}
+.dark--blocks {
+    background-color: rgb(31, 31, 31);
+    transition: 0.5s;
+    border: 2px solid white;
+}
+@media(max-width: 1080px) {
+.list__item {
+    display: none;
+}
+.list__theme {
+    margin-right: 100px;
+}
+.burger-icon {
+    display: block;
+    height: 100px;
+    width: 100px;
+    color: black;
+}
+}
+@media(max-width: 650px) {
+    .container {
+        flex-direction: column;
+    }
+    .spawn-text {
+        width: 100%;
+        margin: 0;
+    }
+    .list__theme {
+        display: none;
+    }
+}
+@media(max-width: 470px) {
+    #img2 {
+        width: 100%;
+    }
+    .header-logo {
+        display: flex;
+        width: 50vw;
+    }
+}
